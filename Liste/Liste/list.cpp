@@ -116,4 +116,5 @@ node *sum_list(node *first_list, node *second_list) {
 
 		return third_list;
 	}
+
 }
