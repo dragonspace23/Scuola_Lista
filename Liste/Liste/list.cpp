@@ -1,10 +1,30 @@
 #include "list.h"
 
-void add_node(node **list) {
-	node *temp = (node*)malloc(sizeof(node));
-	temp->info = NULL;
-	temp->next = *list;
-	list = &temp;
+void add_node(int mode, node **list) {
+	if (mode == head) {
+		node *temp = (node*)malloc(sizeof(node));
+		temp->info = NULL;
+		temp->next = *list;
+		list = &temp;
+	}
+	else if (mode == tail) {
+		if (*list) {
+			node *ptr = *list;
+			while (ptr->next) {
+				ptr = ptr->next;
+			}
+
+			ptr->next = (node*)malloc(sizeof(node));
+			ptr = ptr->next;
+			ptr->next = NULL;
+
+			printf("Valore: ");
+			scanf("%d", &ptr->info);
+		}
+		else {
+			*list = (node*)malloc(sizeof(node));
+		}
+	}
 }
 
 void input_node(node *list) {
@@ -75,7 +95,7 @@ node *sum_list(node *first_list, node *second_list) {
 		node *third_list = NULL;
 		
 		do {
-			add_node(&third_list);
+			add_node(head, &third_list);
 			third_list->info = first_list->info + second_list->info;
 
 			first_list = first_list->next;
