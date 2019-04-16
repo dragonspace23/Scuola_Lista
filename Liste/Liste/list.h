@@ -15,14 +15,14 @@ struct node {
 };
 
 void add_node(int mode, node **list);
-
+void input_node(int mode, node *list);
 void print_nodes(node *list);
 int count_nodes(node *list);
 int is_list_empty(node *list);
 
 void max_info(node *list);
 
-node * sum_list(node *first_list, node *second_list);
+node *sum_list(node *first_list, node *second_list);
 
 
 #endif // !LIST_INCLUDE
