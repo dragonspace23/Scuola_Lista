@@ -103,24 +103,24 @@ node *sum_list(node *first_list, node *second_list) {
 	else {
 		node *third_list = NULL;
 		
-		while ((first_list->next) && (second_list->next)) {
+		do {
 			add_node(head, &third_list);
 			third_list->info = first_list->info + second_list->info;
 
 			first_list = first_list->next;
 			second_list = second_list->next;
-		}
+		} while ((first_list) && (second_list));
 
 		node *ptr = third_list;
 		while (ptr->next) {
 			ptr = ptr->next;
 		}
 
-		if (first_list->next) {
+		if (first_list) {
 			ptr->next = first_list->next;
 		}
-		else if(second_list->next) {
-			ptr->next = second_list->next;
+		else if(second_list) {
+			ptr->next = second_list;
 		}
 
 		return third_list;
