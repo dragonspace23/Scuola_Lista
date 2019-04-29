@@ -27,6 +27,31 @@ void add_node(int mode, node **list) {
 	}
 }
 
+void del_node(int mode, node **list) {
+	if (mode == head) {
+		if (*list) {
+			node *op1 = *list;
+			*list = (*list)->next;
+			free(op1);
+		}
+	}
+	else if (mode == tail) {
+		if (*list) {
+			if (!(*list)->next) {
+				free(*list);
+			}
+			else {
+				node *ptr1 = *list;
+				while (ptr1->next->next) {
+					ptr1 = ptr1->next;
+				}
+
+				free(ptr1);
+			}
+		}
+	}
+}
+
 void input_node(int mode, node *list) {
 	node *ptr = list;
 

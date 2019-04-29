@@ -15,6 +15,7 @@ struct node {
 };
 
 void add_node(int mode, node **list);
+void del_node(int mode, node ** list);
 void input_node(int mode, node *list);
 void print_nodes(node *list);
 int count_nodes(node *list);
