@@ -39,6 +39,7 @@ void del_node(int mode, node **list) {
 		if (*list) {
 			if (!(*list)->next) {
 				free(*list);
+				*list = NULL;
 			}
 			else {
 				node *ptr1 = *list;
@@ -47,6 +48,7 @@ void del_node(int mode, node **list) {
 				}
 
 				free(ptr1);
+				ptr1 = NULL;
 			}
 		}
 	}
