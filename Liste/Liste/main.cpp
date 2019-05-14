@@ -18,12 +18,12 @@ int main(int argc, char **argv) {
 	node *lista_uno = NULL;
 	node *lista_due = NULL;
 
-	int cont = 1;
+	int cont = 1, x = 0;
 	do {
 		clear();
 		
 		int scelta;
-		printf("1 - Aggiungere un nodo in testa\n2 - Aggiungere un nodo in coda\n3 - Stampa\n4 - Trovare il maggiore\n5 - Contare i nodi\n6 - Sommare le 2 liste\n7 - Uscire\nScelta: ");
+		printf("1 - Aggiungere un nodo in testa\n2 - Aggiungere un nodo in coda\n3 - Stampa\n4 - Trovare il maggiore\n5 - Contare i nodi\n6 - Sommare le 2 liste\n7 - Eliminazione ricercata\n8 - Uscire\nScelta: ");
 		scanf("%d", &scelta);
 		getchar();
 
@@ -103,6 +103,14 @@ int main(int argc, char **argv) {
 			break;
 
 		case 7:
+			printf("Che valore rimuovere?\n");
+			scanf_s("%d", &x);
+			list = elimina(list, x);
+
+			pause();
+			break;
+
+		case 8:
 			cont = false;
 			break;
 		}

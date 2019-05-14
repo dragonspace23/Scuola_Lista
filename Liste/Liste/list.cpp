@@ -127,3 +127,27 @@ node *sum_list(node *first_list, node *second_list) {
 	}
 
 }
+
+node* elimina(node *list, int x) {
+	node *p, *q;
+	p = list;
+	int trovato = 0;
+	q = NULL;while (p != NULL && trovato == 0) {
+		if(p->info == x) trovato = 1;
+		else{
+			q = p;
+			p = p->next;
+		}
+	}
+	if(trovato == 1) {
+		if(q != NULL) {
+			q->next = p->next;
+			free(p);
+		}
+		else{
+			list = list->next;
+			free(p);
+		}
+	}
+	return list;
+}

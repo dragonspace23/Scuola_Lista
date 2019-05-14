@@ -12,6 +12,7 @@ enum mode {
 struct node {
 	int info;
 	node *next;
+	node *prev;
 };
 
 void add_node(int mode, node **list);
@@ -19,6 +20,7 @@ void input_node(int mode, node *list);
 void print_nodes(node *list);
 int count_nodes(node *list);
 int is_list_empty(node *list);
+node* elimina(node* list);
 
 void max_info(node *list);
 
