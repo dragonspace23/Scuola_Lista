@@ -25,5 +25,6 @@ void max_info(node *list);
 
 node *sum_list(node *first_list, node *second_list);
 
+void ehhhh(node **list);
 
 #endif // !LIST_INCLUDE

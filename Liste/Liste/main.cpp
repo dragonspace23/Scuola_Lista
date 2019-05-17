@@ -130,6 +130,10 @@ int main(int argc, char **argv) {
 		case 9:
 			cont = false;
 			break;
+		
+		case 10:
+			ehhhh(&lista_due);
+			break;
 		}
 
 		clear();

@@ -154,3 +154,19 @@ node *sum_list(node *first_list, node *second_list) {
 	}
 
 }
+
+void ehhhh (node **list) {
+	if (!(*list && (*list)->next))
+		return;
+
+	node *ptr = *list;
+	while (ptr->next->next) {
+		ptr->info = ptr->info * ptr->next->info;
+		ptr = ptr->next;
+	}
+
+	ptr->info = ptr->info * ptr->next->info;
+	node *ptr2 = ptr->next;
+	ptr->next = NULL;
+	free(ptr2);
+}
